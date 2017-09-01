@@ -1,0 +1,21 @@
+apply plugin: 'java'
+
+group = 'com.intlgds'
+version = "${versions.op_pricestrategy_front_operator}"
+jar {
+	baseName = 'pricestrategy'
+}
+
+
+dependencies {
+
+	compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.1'
+	compile libraries.mongo_java_driver
+    compile libraries.spring_data_mongodb
+    
+    compile group: 'com.google.guava', name: 'guava', version: '18.0'
+    
+	compile group: 'commons-collections', name: 'commons-collections', version: '3.2.1'
+    
+
+}

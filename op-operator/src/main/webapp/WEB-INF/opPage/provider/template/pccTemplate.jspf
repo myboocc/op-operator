@@ -1,0 +1,75 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<div class="pccInfoWrapper" v-for="(gds, gdsIndex) in gdsArr">
+	<div class="pccInfo" style="flex: 1;">
+		<div class="formWrapper form-horizontal">
+			<div class="formLeft" style="flex: 1;">
+				<div class="form-group">
+					<label class="control-label lableWidth100 marginRight10"><i class="colorRed">*</i>查询及预订PCC</label> 
+					<input type="text" class="form-control" :name="_initName('pccInfos', gdsIndex, 'pcc')" v-bind:value="gds.pcc" readonly="readonly">
+				</div>
+				<div class="form-group">
+					<label class="control-label lableWidth100 marginRight10"><i class="colorRed">*</i>AccountCode</label> 
+					<input type="text" class="form-control" :name="_initName('pccInfos', gdsIndex, 'accountCode')" v-bind:value="gds.accountCode" readonly="readonly">
+				</div>
+			</div>
+			<div class="formMiddle" style="flex: 1;">
+				<div class="form-group">
+					<label for="fitAirline" class="control-label lableWidth100 marginRight10">GDS</label>
+					<input type="text" class="form-control" v-bind:placeholder="gds.gds" readonly="readonly">
+					<input type="hidden" :name="_initName('pccInfos', gdsIndex, 'gds')" v-bind:value="gds.gds" />
+				</div>
+			</div>
+			<div class="formRight" style="flex: 1;">
+				<div class="form-group">
+					<label class="control-label lableWidth100 marginRight10">结算货币</label>
+					<input type="text" class="form-control" v-bind:placeholder="gds.currency" readonly="readonly">
+					<input type="hidden" :name="_initName('pccInfos', gdsIndex, 'currency')" v-bind:value="gds.currency" />
+				</div>
+			</div>
+		</div>
+		<!-- 出票PCC -->
+		<div class="formWrapper form-horizontal" v-for="(printPcc, index) in gds.printPcc">
+			<div class="formLeft" style="flex: 1;">
+				<div class="form-group">
+					<label class="control-label lableWidth100 marginRight10"><i class="colorRed">*</i>出票PCC</label> 
+					<input type="text" class="form-control" :name="_initName('pccInfos.printTicketPccs', index, 'pcc', gdsIndex)" v-bind:value="printPcc.pcc" readonly="readonly">
+				</div>
+				<div class="form-group">
+					<label class="control-label lableWidth100 marginRight10 paddingTop0">
+						<input type="text" class="form-control" v-bind:placeholder="printPcc.mailTypeText" readonly="readonly">
+						<input type="hidden" :name="_initName('pccInfos.printTicketPccs', index, 'mailType', gdsIndex)" v-bind:value="printPcc.mailType" />
+					</label> 
+					<input type="text" class="form-control" :name="_initName('pccInfos.printTicketPccs', index, 'mailAddress', gdsIndex)" v-bind:value="printPcc.mailAddress">
+				</div>
+			</div>
+			<div class="formMiddle" style="flex: 1;">
+				<div class="form-group">
+					<label for="fitAirline" class="control-label lableWidth100 marginRight10">GDS</label>
+					<input type="text" class="form-control" v-bind:placeholder="printPcc.printGds" readonly="readonly">
+					<input type="hidden" :name="_initName('pccInfos.printTicketPccs', index, 'gds', gdsIndex)" v-bind:value="printPcc.printGds" />
+				</div>
+				<div class="form-group">
+					<label for="fitAirline" class="control-label lableWidth100 marginRight10">电子邮件模板</label>
+					<input type="text" class="form-control" v-bind:placeholder="printPcc.emailTemplateText" readonly="readonly">
+					<!-- <input type="hidden" :name="_initName('pccInfos.printTicketPccs', index, 'emailTemplate', gdsIndex)" v-bind:value="printPcc.emailTemplate" /> -->
+				</div>
+			</div>
+			<div class="formRight" style="flex: 1;">
+				<div class="form-group">
+					<label class="control-label lableWidth100 marginRight10">结算货币</label>
+					<input type="text" class="form-control" v-bind:placeholder="printPcc.printCurrency" readonly="readonly">
+					<input type="hidden" :name="_initName('pccInfos.printTicketPccs', index, 'currency', gdsIndex)" v-bind:value="printPcc.printCurrency" />
+				</div>
+				<div class="addPCCBtn">
+					<button type="button" class="btn btn-mini btn-primary" @click="_delPrintPcc(gds, printPcc)">删除该出票PCC</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="addGDSBtn">
+		<button type="button" class="btn btn-mini btn-primary" @click="_delGds(gds)">删除GDS</button>
+	</div>
+</div>
+
+ 	

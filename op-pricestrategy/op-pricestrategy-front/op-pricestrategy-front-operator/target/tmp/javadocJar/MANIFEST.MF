@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Implementation-Title: op-pricestrategy-front-operator
+Implementation-Version: unspecified
+Built-By: xubinhui
+Built-JDK: 1.8.0_77
+Implementation-Timestamp: 2017-09-01T15:48:45+0800
+

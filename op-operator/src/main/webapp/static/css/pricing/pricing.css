@@ -1,0 +1,163 @@
+.viewTime{
+    border:1px solid #ccc;
+    background: #fff;
+    width: 600px;
+    position: absolute;
+    left: -180px;
+    display: none;
+    z-index: 99;
+}
+.v-weekTime span{
+    display: inline-block;
+    padding: 0 5px;
+    border: 1px solid #ccc;
+    line-height: 1.5;
+    border-radius: 2px;
+    margin-right: 5px;
+}
+.workTime h4{
+    display:block;
+    padding: 8px 3px;
+}
+.chooseTime{
+    border-top: 1px solid #ccc;
+    padding: 5px 5px;
+}
+.chooseTime div{
+    float: left;
+}
+.close{
+    display: inline-block;
+    width: 17px;
+    height: 16px;
+    cursor: pointer;
+    float: right;
+    margin: 2px 5px 0 0;
+}
+
+.commonbg{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#19ffffff,endColorstr=#19ffffff);
+
+    z-index: 999;
+}
+.workTime{
+    border:1px solid #ccc;
+    background: #fff;
+    width: 600px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 999;
+}
+.defaultWorkTime{
+    border:1px solid #ccc;
+    background: #fff;
+    width: 600px;
+    position: absolute;
+    left: -335px;
+    z-index: 999;
+}
+
+.chooseTime{
+    border-top: 1px solid #ccc;
+    padding: 5px 5px;
+}
+.chooseTime div{
+    float: left;
+}
+
+.chooseTit{
+    margin-top:5px;
+}
+.chooseTime .weekTime{
+    margin: 5px 0;
+}
+.chooseTime .weekTime>span{
+    display: inline-block;
+    padding: 0 5px;
+    border:1px solid #ccc;
+    line-height: 1.5;
+    border-radius: 2px;
+    margin-right:5px;
+    cursor: pointer;
+}
+.chooseTime .weekTime>span:hover{
+    background: #2ccaf1;
+    color: #fff;
+}
+.chooseAdd{
+    margin-top: 17px;
+}
+.bgBlue{
+    background: #2ccaf1;
+    color: #fff;
+}
+.submitTime{
+    text-align: center;
+    padding: 5px 0;
+    border-top: 1px solid #ccc;
+}
+
+.custom-time{
+    margin-left:-54px;
+    margin-right: 0px !important;
+    padding-top:4px;
+}
+.item-del {
+    cursor: pointer;
+    /* background: url(http://static.op1.tdxinfo.com/images/deleteButton1.gif) 50% 50% no-repeat; */
+    overflow: hidden;
+    position: relative;
+    padding-right: 10px\9;
+}
+.item-del img{
+	width: 10px;
+	height: 10px;
+	margin-left: 5px;
+	vertical-align: baseline !important;
+}
+.item-del input{
+    visibility:hidden !important;
+    position:absolute\9;
+    top:0\0;
+    *margin-left:-100px;
+    left:0\0;
+    width:100%\0;
+    height:100%\0;
+    visibility:visible\9;
+    filter:alpha(opacity=0)\9; 
+}
+
+.selectAirport, .excludeAirport {
+	padding-top: 4px;
+}
+
+.selectAirport > a, .excludeAirport > a {
+	display: block;
+}
+
+.selectAirport > textarea {
+	width: 400px;
+}
+
+.selectAirport {
+	float: left;
+	margin-right: 20px;
+}
+
+.timeGroup, .cabinGroup {
+	margin-bottom: 10px;
+	border: 1px solid rgb(215, 215, 215);
+}
+
+#departureAirportsInclude-error, #departureAirportsExclude-error,
+	#arriveAirportsInclude-error, #passengerTypes-error,
+	#arriveAirportsExclude-error {
+	display: inline-block;
+}

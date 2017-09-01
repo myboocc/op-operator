@@ -1,0 +1,22 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<div class="marginLeft20">
+	<p class="marginBottom5">正常上班时间：周一、周二、周三、周四、周五上班时间</p>
+	<div class="marginBottom10">
+		<%@ include file="timeTemplate.jspf" %>
+		<span>至</span>
+		<%@ include file="timeTemplate.jspf" %>
+	</div>
+	<p class="marginBottom5">双休上班时间：周六、周日上班时间</p>
+	<div class="marginBottom10">
+		<%@ include file="timeTemplate.jspf" %>
+		<span>至</span>
+		<%@ include file="timeTemplate.jspf" %>
+	</div>
+	<p class="marginBottom5">法定假日时间：法定节假日上班时间</p>
+	<div class="marginBottom10">
+		<%@ include file="timeTemplate.jspf" %>
+		<span>至</span>
+		<%@ include file="timeTemplate.jspf" %>
+	</div>
+</div>

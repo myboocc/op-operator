@@ -1,0 +1,32 @@
+.control-label {
+	width: 120px !important;
+	/* text-align: left !important; */
+}
+
+.form-group {
+	margin-bottom: 15px;
+}
+
+.paddingTop0{
+	padding-top: 0 !important;
+}
+
+.text-center {
+	text-align: center !important;
+}
+.pccInfoWrapper {
+	display: flex;
+}
+
+.addGDSBtn {
+	flex: 0 0 80px;
+	width: 80px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.addPCCBtn{
+	display: flex;
+    align-items: center;
+	justify-content: flex-end;
+}
