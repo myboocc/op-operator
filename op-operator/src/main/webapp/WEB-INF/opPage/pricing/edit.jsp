@@ -280,7 +280,7 @@
 				    </div>
 				</div>
 			</div>
-			<!-- <div class="titleWrapper clearfix">
+			<div class="titleWrapper clearfix">
 				<div class="title">政策信息</div>
 			</div>
 			<div class="formWrapper form-horizontal">
@@ -292,13 +292,13 @@
 						</div>
 						<div style="display: flex;">
 							<div style="flex: 1;">
-								<div class="form-group" style="margin-top: 10px;">
+								<!-- <div class="form-group" style="margin-top: 10px;">
 								    <label class="control-label lableWidth100 marginRight10">开票有效期</label>
 								    <input class="span10 date-picker billingStartTimeHook" :name="_initName('timeGroups', timeIndex, 'printTktTime.start')" id="billingStartTime"  value="" type="text" data-date-format="yyyy-mm-dd" readonly="readonly" style="width:88px;" placeholder="开始日期" title=""/>
 									<span>至</span>
 									<input class="span10 date-picker billingEndTimeHook" :name="_initName('timeGroups', timeIndex, 'printTktTime.end')" id="billingEndTime" value="" type="text" data-date-format="yyyy-mm-dd" readonly="readonly" style="width:88px;" placeholder="结束日期" title=""/>
-								</div>
-								<div class="form-group">
+								</div> -->
+								<!-- <div class="form-group">
 								    <label class="control-label lableWidth100 marginRight10">去程有效期</label>
 								    <input class="span10 date-picker departureStartTimeHook" :name="_initName('timeGroups', timeIndex, 'departTimes.start')" id="departureStartTime"  value="" type="text" data-date-format="yyyy-mm-dd" readonly="readonly" style="width:88px;" placeholder="开始日期" title=""/>
 									<span>至</span>
@@ -315,10 +315,10 @@
 								    	<input type="checkbox" :name="_initName('timeGroups', timeIndex, 'departureApplicableDays')" class="departureApplicableDaysHook" value="SAT" checked="checked"> <span class="paddingLeft20 marginRight20">周六</span>
 								    	<input type="checkbox" :name="_initName('timeGroups', timeIndex, 'departureApplicableDays')" class="departureApplicableDaysHook" value="SUN" checked="checked"> <span class="paddingLeft20">周日</span>
 								    </div>
-							    </div>
+							    </div> -->
 						    </div>
 						    <div style="flex: 1;" class="isReturnTtipHook" v-show="isReturnTtip">
-								<div class="form-group" style="margin-top: 10px;">
+								<!-- <div class="form-group" style="margin-top: 10px;">
 								    <label class="control-label marginRight10">回程超出截至有效期时</label>
 								    <div style="padding-top: 4px;">
 									    <input type="radio" class="form-control" :name="_initName('timeGroups', timeIndex, 'backOverdueType')" value="BY_CROSS_SEASON" v-bind:checked="isReturnTtip"> <span class="paddingLeft20 marginRight20">按跨季处理</span>
@@ -347,13 +347,13 @@
 								    	<input type="checkbox" :name="_initName('timeGroups', timeIndex, 'returnApplicableDays')" id="" value="SAT" checked="isReturnTtip === true"> <span class="paddingLeft20 marginRight20">周六</span>
 								    	<input type="checkbox" :name="_initName('timeGroups', timeIndex, 'returnApplicableDays')" id="" value="SUN" checked="isReturnTtip === true"> <span class="paddingLeft20">周日</span>
 								    </div>
-							    </div>
+							    </div> -->
 						    </div>
 					    </div>
 					    
 					    <div class="formWrapper form-horizontal">
 							<div class="formItem cabinGroupWrapper" id="cabinGroupWrapper">
-							    <div class="cabinGroup clearfix" id="cabinGroup1" v-for="(cabinGroup,index) in timeGroup.timeGroup">
+							    <!-- <div class="cabinGroup clearfix" id="cabinGroup1" v-for="(cabinGroup,index) in timeGroup.timeGroup">
 							    	<div class="titleWrapper clearfix">
 										<div class="cabinTitle">舱位组{{index + 1}}</div>
 										<button type="button" class="btn btn-mini btn-primary cabinGroupBtn" @click="[index === 0?_addCabinGroup(timeGroup):_removeCabinGroup(timeGroup,cabinGroup)]">{{index === 0?'添加一组舱位':'删除该舱位组'}}</button>
@@ -420,12 +420,12 @@
 										  <option value="CAN_CACROSSGROUP_CABIN_NOT_SINGLE_OPEN">可跨组混舱，不单开</option>
 										</select>
 									</div>
-							    </div>
+							    </div> -->
 						    </div>
 					    </div>
 					</div>
 				</div>
-			</div> -->
+			</div>
 			
 			<div class="titleWrapper clearfix">
 				<div class="title">政策备注</div>
@@ -543,21 +543,21 @@
 			},
 			_submit() {
 				/* if(checkEndTime()){ */
-					$.ajax({
+					<%-- $.ajax({
 						type: "POST",
 						url: $("#pricingForm").attr("action"),
 				    	data: $("#pricingForm").serialize(),
 						cache: false,
 						success: function(data){
-							<%--  if(0 == data.status){
+							 if(0 == data.status){
 								window.location.href = "<%=basePath%>pricing/list";
 							 }else{
 								alert(data.msg);
-							 } --%>
+							 }
 						}
-					});
-					/*	this.$refs.pricingForm.submit();
-				 } else {
+					}); --%>
+					this.$refs.pricingForm.submit();
+					/*	} else {
 					window.alert("表单校验不通过！");
 					return false;
 				} */

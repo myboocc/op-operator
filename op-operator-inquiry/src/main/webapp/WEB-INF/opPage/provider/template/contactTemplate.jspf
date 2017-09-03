@@ -1,0 +1,40 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<div class="formWrapper form-horizontal contactGroups" v-for="(contact, index) in contacts" v-show="contacts.length > 0">
+   	<div class="formLeft" style="flex: 1;">
+   		<div class="form-group">
+   			<label class="control-label lableWidth100 marginRight10"><i class="colorRed">*</i>对接业务</label> 
+   			<input type="text" class="form-control" id="" readonly="readonly" v-bind:placeholder="contact.dockingBusinessText">
+   			<input type="hidden" :name="_initName('contacts', index, 'dockingBusiness')" v-bind:value="contact.dockingBusiness" />
+   		</div>
+   		<div class="form-group">
+   			<label class="control-label lableWidth100 marginRight10"><i class="colorRed">*</i>邮箱</label> 
+   			<input type="text" class="form-control" id="" :name="_initName('contacts', index, 'email')" readonly="readonly" v-bind:value="contact.email">
+   		</div>
+   	</div>
+   	<div class="formMiddle" style="flex: 1;">
+   		<div class="form-group">
+   			<label for="fitAirline" class="control-label lableWidth100 marginRight10">中文名</label> 
+   			<input type="text" class="form-control" id="" :name="_initName('contacts', index, 'chineseName')" readonly="readonly" v-bind:value="contact.chineseName">
+   		</div>
+   		<div class="form-group">
+   			<label for="fitAirline" class="control-label lableWidth100 marginRight10">QQ</label> 
+   			<input type="text" class="form-control" id="" :name="_initName('contacts', index, 'qq')" readonly="readonly" v-bind:value="contact.qq">
+   		</div>
+   	</div>
+   	<div class="formRight" style="flex: 1;">
+   		<div class="form-group">
+   			<label class="control-label lableWidth100 marginRight10">英文名</label>
+   			<input type="text" class="form-control" id="" :name="_initName('contacts', index, 'englishName')" readonly="readonly" v-bind:value="contact.englishName">
+   		</div>
+   		<div class="form-group">
+   			<label class="control-label lableWidth100 marginRight10">电话</label>
+   			<input type="text" class="form-control" id="" :name="_initName('contacts', index, 'telephone')" readonly="readonly" v-bind:value="contact.telephone">
+   		</div>
+   	</div>
+   	<div class="addPCCBtn" style="flex: 0 0 50px;">
+   		<button type="button" class="btn btn-mini btn-primary timeGroupBtn" @click="_delete(contact, 'contact')">删除</button>
+   	</div>
+</div>
+
+ 	

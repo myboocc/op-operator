@@ -6,6 +6,8 @@ public enum RefundType {
 	INVALID,
 	//累加
 	ADD,
+	//取1/2值
+	HALF_VALUE,
 	//取单项最小值
 	SINGLE_MIN_VALUE,
 	//取单项最大值

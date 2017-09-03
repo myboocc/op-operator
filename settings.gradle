@@ -1,3 +1,4 @@
 apply from : 'op-operator.settings.gradle'
 apply from : 'op-pricestrategy.settings.gradle'
+apply from : 'op-operator-inquiry.settings.gradle'
 

@@ -1,0 +1,24 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<script type="text/x-template" id="work-time-template">
+<div class="marginLeft20">
+	<p class="marginBottom5">正常上班时间：周一、周二、周三、周四、周五上班时间</p>
+	<div class="marginBottom10">
+		<input class="form-control text-danger span1 workStartTime" id="workStartTime" readonly="readonly" type="text" :name="initName('workStartTime')" value="">
+		<span>至</span>
+		<input class="form-control text-danger span1 workStartTime" id="workStartTime" readonly="readonly" type="text" :name="initName('workEndTime')" value="">
+	</div>
+	<p class="marginBottom5">双休上班时间：周六、周日上班时间</p>
+	<div class="marginBottom10">
+		<input class="form-control text-danger span1 workStartTime" id="workStartTime" readonly="readonly" type="text" :name="initName('weekendsStartTime')" value="${provider.workStartTime }">
+		<span>至</span>
+		<input class="form-control text-danger span1 workStartTime" id="workStartTime" readonly="readonly" type="text" :name="initName('weekendsEndTime')" value="${provider.workStartTime }">
+	</div>
+	<p class="marginBottom5">法定假日时间：法定节假日上班时间</p>
+	<div class="marginBottom10">
+		<input class="form-control text-danger span1 workStartTime" id="workStartTime" readonly="readonly" type="text" :name="initName('legalStartTime')" value="${provider.workStartTime }">
+		<span>至</span>
+		<input class="form-control text-danger span1 workStartTime" id="workStartTime" readonly="readonly" type="text" :name="initName('legalEndTime')" value="${provider.workStartTime }">
+	</div>
+</div>
+</script>

@@ -14,8 +14,21 @@
 	<context:component-scan base-package="com.pricestrategy.front.operator.bean" />
 	
 	<mvc:annotation-driven />
+	
+	<mvc:annotation-driven conversion-service="myDateConverter"/>
+	
+	<mvc:default-servlet-handler />
 
-	<mvc:annotation-driven>
+	<bean id ="myDateConverter" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <bean class="com.operator.convert.MyDateConverter"></bean>
+                <bean class="org.springframework.core.convert.support.StringToBooleanConverter"></bean>
+            </set>
+        </property>
+    </bean>
+
+	<!-- <mvc:annotation-driven>
 		<mvc:message-converters>
 			<bean class="com.operator.util.CustomStringHttpMessageConverter">
 				<property name="supportedMediaTypes">
@@ -33,15 +46,15 @@
 				</property>
 			</bean>
 		</mvc:message-converters>
-	</mvc:annotation-driven>
+	</mvc:annotation-driven> -->
 
 	<!-- 访问拦截  -->
-	<mvc:interceptors>
+	<!-- <mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/**/**"/>
 			<bean class="com.operator.interceptor.LoginHandlerInterceptor"/>
 		</mvc:interceptor>
-	</mvc:interceptors>
+	</mvc:interceptors> -->
 
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/opPage/"/>

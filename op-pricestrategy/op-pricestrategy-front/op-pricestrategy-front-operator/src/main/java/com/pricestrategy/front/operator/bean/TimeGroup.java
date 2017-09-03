@@ -1,5 +1,6 @@
 package com.pricestrategy.front.operator.bean;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
@@ -24,7 +25,7 @@ public class TimeGroup {
 	//回程有效期截止 类型
 	private DeadLineType deadLineType;
 	//回程有效期截止
-	private String deadLineTime;
+	private Date deadLineTime;
 	
 	//去程适用班期
 	private Set<Day> departureApplicableDays;
@@ -94,11 +95,11 @@ public class TimeGroup {
 		this.deadLineType = deadLineType;
 	}
 
-	public String getDeadLineTime() {
+	public Date getDeadLineTime() {
 		return deadLineTime;
 	}
 
-	public void setDeadLineTime(String deadLineTime) {
+	public void setDeadLineTime(Date deadLineTime) {
 		this.deadLineTime = deadLineTime;
 	}
 

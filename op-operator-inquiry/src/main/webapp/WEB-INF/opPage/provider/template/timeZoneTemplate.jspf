@@ -1,0 +1,31 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+	<select name="timeZone" id="providerTimeZone" class="form-control">
+		<option <c:if test="${'UTC' eq provider.providerTimeZone}">selected</c:if>   value="UTC-12">UTC/GMT-12:00(西十二区)</option>
+		<option <c:if test="${'UTC+1' eq provider.providerTimeZone}">selected</c:if> value="UTC-11">UTC/GMT-11:00(西十一区)</option>
+		<option <c:if test="${'UTC+2' eq provider.providerTimeZone}">selected</c:if> value="UTC-10">UTC/GMT-10:00(西十区)</option>
+		<option <c:if test="${'UTC+3' eq provider.providerTimeZone}">selected</c:if> value="UTC-9">UTC/GMT-09:00(西九区)</option>
+		<option <c:if test="${'UTC+4' eq provider.providerTimeZone}">selected</c:if> value="UTC-8">UTC/GMT-08:00(西八区)</option>
+		<option <c:if test="${'UTC+5' eq provider.providerTimeZone}">selected</c:if> value="UTC-7">UTC/GMT-07:00(西七区)</option>
+		<option <c:if test="${'UTC+6' eq provider.providerTimeZone}">selected</c:if> value="UTC-6">UTC/GMT-06:00(西六区)</option>
+		<option <c:if test="${'UTC+7' eq provider.providerTimeZone}">selected</c:if> value="UTC-5">UTC/GMT-05:00(西五区)</option>
+		<option <c:if test="${'UTC+8' eq provider.providerTimeZone}">selected</c:if> value="UTC-4">UTC/GMT-04:00(西四区)</option>
+		<option <c:if test="${'UTC+9' eq provider.providerTimeZone}">selected</c:if> value="UTC-3">UTC/GMT-03:00(西三区)</option>
+		<option <c:if test="${'UTC+10' eq provider.providerTimeZone}">selected</c:if>value="UTC-2">UTC/GMT-02:00(西二区)</option>
+		<option <c:if test="${'UTC+11' eq provider.providerTimeZone}">selected</c:if>value="UTC-1">UTC/GMT-01:00(西一区)</option>
+		
+		<option <c:if test="${'UTC-11' eq provider.providerTimeZone}">selected</c:if>value="UTC+0">UTC/GMT00:00(格林威治时间)</option>
+		
+		<option <c:if test="${'UTC-10' eq provider.providerTimeZone}">selected</c:if>value="UTC+1">UTC/GMT+01:00(东一区)</option>
+		<option <c:if test="${'UTC-9' eq provider.providerTimeZone}">selected</c:if> value="UTC+2">UTC/GMT+02:00(东二区)</option>
+		<option <c:if test="${'UTC-8' eq provider.providerTimeZone}">selected</c:if> value="UTC+3">UTC/GMT+03:00(东三区)</option>
+		<option <c:if test="${'UTC-7' eq provider.providerTimeZone}">selected</c:if> value="UTC+4">UTC/GMT+04:00(东四区)</option>
+		<option <c:if test="${'UTC-6' eq provider.providerTimeZone}">selected</c:if> value="UTC+5">UTC/GMT+05:00(东五区)</option>
+		<option <c:if test="${'UTC-5' eq provider.providerTimeZone}">selected</c:if> value="UTC+6">UTC/GMT+06:00(东六区)</option>
+		<option <c:if test="${'UTC-4' eq provider.providerTimeZone}">selected</c:if> value="UTC+7">UTC/GMT+07:00(东七区)</option>
+		<option <c:if test="${'UTC-3' eq provider.providerTimeZone}">selected</c:if> value="UTC+8">UTC/GMT+08:00(东八区)</option>
+		<option <c:if test="${'UTC-2' eq provider.providerTimeZone}">selected</c:if> value="UTC+9">UTC/GMT+09:00(东九区)</option>
+		<option <c:if test="${'UTC-1' eq provider.providerTimeZone}">selected</c:if> value="UTC+10">UTC/GMT+10:00(东十区)</option>
+		<option <c:if test="${'UTC-2' eq provider.providerTimeZone}">selected</c:if> value="UTC+11">UTC/GMT+11:00(东十一区)</option>
+		<option <c:if test="${'UTC-1' eq provider.providerTimeZone}">selected</c:if> value="UTC+12">UTC/GMT+12:00(东西十二区)</option>
+	</select>
