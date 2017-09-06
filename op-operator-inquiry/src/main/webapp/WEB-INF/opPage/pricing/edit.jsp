@@ -362,7 +362,7 @@
 										<label class="control-label lableWidth100" style="float: none;">成人政策</label>
 										<div class="form-group floatLeft width200">
 										    <label for="inputEmail3" class="control-label lableWidth100 marginRight10"><i class="colorRed">*</i>代理费</label>
-								    		<input type="text" :name="_initName('timeGroups.cabinGroups', index, 'adtComission.agencyRatio', timeIndex)" id="adtAgencyFee" class="form-control span3" placeholder="" value="0">&nbsp;&nbsp;%
+								    		<input type="text" :name="_initName('timeGroups.cabinGroups', index, 'adtComission.agencyRatio', timeIndex)" :id="_initValidId('adtAgencyFee',index ,'{required:true,date:true}')" class="form-control span3 txt" placeholder="" value="0">&nbsp;&nbsp;%
 										</div>
 										<div class="form-group floatLeft width200">
 								    		<label class="control-label lableWidth100 marginRight10"><i class="colorRed">*</i>奖励扣率</label>
@@ -408,7 +408,7 @@
 										<label class="control-label lableWidth100" style="float: none;">婴儿政策</label>
 										<div class="form-group floatLeft width200">
 								    		<label class="control-label lableWidth100 marginRight10"><i class="colorRed">*</i>开票费</label>
-								    		<input type="text" :name="_initName('timeGroups.cabinGroups', index, 'babyCommission.tktFee', timeIndex)" id="babyBillingFare" class="form-control span3" value="0">&nbsp;&nbsp;元
+								    		<input type="text" :name="_initName('timeGroups.cabinGroups', index, 'babyCommission.tktFee', timeIndex)"  class="form-control span3" value="0">&nbsp;&nbsp;元
 										</div>
 									</div>
 									<div class="form-group" style="display: block;">
@@ -448,8 +448,8 @@
 			
 			<div class="form-group btnGroup">
 				<div class="col-sm-offset-4 col-sm-8">
-					<!-- <a class="btn btn-danger marginRight20" id="btnSave">发布</a> -->
-					<input class="btn btn-danger marginRight20 submit" type="button" @click="_submit" value="提交">
+					<!-- <a class="btn btn-danger marginRight20" id="btnSave">发布</a> @click="_submit" -->
+					<input class="btn btn-danger marginRight20 submit" type="submit" value="提交">
 					<a class="btn btn-primary" onclick="back();">返回</a>
 				</div>
 			</div>
@@ -507,6 +507,7 @@
 <script type="text/javascript">
 	$(top.hangge());
 	$(document).ready(function(){
+		var map = new Map();
 		var vm = new Vue({
 		  el: '#main-container',
 		  data: {
@@ -533,6 +534,14 @@
 	  		_initTime(name, index) {
 	  			return name + index;
 	  		},
+	  		_initValidId(name, index, validType) {
+	  			var id = name + index;
+	  			/* var obj = {};
+	  			obj.key = id;
+	  			obj.value = validType; */
+	  			map.set(id, validType);
+	  			return id;
+	  		},
 		  	_addTimeGroup() {
 		  		let tmpTimeGroup = {"timeGroup": [{"cabinGroup": "1"}]};
 				this.timeGroups.push(tmpTimeGroup);
@@ -548,6 +557,15 @@
 		  	_addCabinGroup(args) {
 				let cabinGroup = {"cabinGroup": "1"};
 				args.timeGroup.push(cabinGroup);
+				this.$nextTick( () => {
+					console.log(map);
+					map.forEach(function (value, key, map) {
+						console.log(value);
+						var obj = JSON.parse('{"required":true,"date":true}');
+						console.log(obj);
+						$("#"+key).rules("add", obj);
+					})
+				});
 			},
 			_removeCabinGroup(_timeGroup,_cabinGroup) {
 				_timeGroup.timeGroup.remove(_cabinGroup);
@@ -681,6 +699,13 @@
 		//initDateTimePicker("#billingStartTime","#billingEndTime");
 		//初始化 去程有效期
 		//initDateTimePicker("#departureStartTime","#departureEndTime","#returnDeadLine");
+		
+		/* $.validator.addClassRules({
+			txt: {
+				required: true,
+				minlength: 5
+			}
+		}) */
         
 		//自定义validate验证输入的数字小数点位数不能大于两位
 	    jQuery.validator.addMethod("minNumber",function(value, element){
